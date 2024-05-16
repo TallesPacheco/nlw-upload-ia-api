@@ -13,3 +13,23 @@ Content-Type: audio/mpeg
 
 < ./example.jpg
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+###
+
+# @name create-transcription
+POST http://localhost:3333/videos/id/transcription
+Content-Type: application/json
+{ 
+    "prompt": "aqui vai ficar um teste"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/videos/id/complete
+Content-Type: application/json
+{ 
+    "videoId": "1",
+    "temperatura": 0.5,
+    "template": "Gere um resumo desse texto: '''{transcription}''' "
+}
